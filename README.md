@@ -35,3 +35,47 @@ source venv/bin/activate  # (Windows: venv\Scripts\activate)
 
 # 3. 安裝所需套件
 pip install -r requirements.txt
+
+### 2. 資料準備
+
+本專案使用 Kaggle 上的 SIIM-ACR Pneumothorax Segmentation 數據集。由於數據檔案過大，請勿將其上傳至 GitHub。
+
+我們推薦使用 Kaggle 官方 API 來下載數據：
+
+1.  **安裝 Kaggle API** (如果您尚未安裝):
+    ```bash
+    pip install kaggle
+    ```
+    (您可能需要先在您的 Kaggle 帳戶「Settings」中建立 API Token 並將其放置在 `~/.kaggle/kaggle.json`)
+
+2.  **下載數據集**：
+    請在專案根目錄 (與 `src/` 同層) 執行以下指令，將數據下載到 `data/` 資料夾中：
+
+    ```bash
+    kaggle datasets download -d jesperdramsch/siim-acr-pneumothorax-segmentation-data -p data/
+    ```
+
+3.  **解壓縮數據**：
+    下載完成後，您會在 `data/` 中找到一個 `siim-acr-pneumothorax-segmentation-data.zip` 檔案。請將其解壓縮。
+
+    ```bash
+    # (Windows/Linux/MacOS 可能有所不同)
+    unzip data/siim-acr-pneumothorax-segmentation-data.zip -d data/
+    ```
+
+4.  **確認結構**：
+    解壓縮完成後，您的 `data/` 資料夾結構應如下所示。`src/train.py` 腳本將會從此處讀取資料：
+
+    ```
+    SIIM-ACR-Pneumothorax-Segmentation/
+    ├── data/
+    │   ├── train-rle.csv
+    │   ├── pneumothorax/
+    │   │   ├── dicom-images-train/
+    │   │   │   └── ... (dicom 檔案)
+    │   │   └── ...
+    │   └── siim-acr-pneumothorax-segmentation-data.zip (可選，可刪除)
+    ├── src/
+    │   └── train.py
+    └── README.md
+    ```
