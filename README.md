@@ -28,17 +28,19 @@
 # 1. 複製本專案 (請替換成您自己的 repo 連結)
 git clone [https://github.com/](https://github.com/)[Your-Username]/SIIM-ACR-Pneumothorax-Segmentation.git
 cd SIIM-ACR-Pneumothorax-Segmentation
-
+```
+```
 # 2. (建議) 建立並啟動虛擬環境
 python -m venv venv
 source venv/bin/activate  # (Windows: venv\Scripts\activate)
-
+```
+```
 # 3. 安裝所需套件
 pip install -r requirements.txt
-
+```
 ### 2\. 資料準備
 
-本專案使用 Kaggle 上的 SIIM-ACR Pneumothorax Segmentation 數據集。由於數據檔案過大，請勿將其上傳至 GitHub。
+本專案使用 Kaggle 上的 SIIM-ACR Pneumothorax Segmentation 數據集。
 
 我們推薦使用 Kaggle 官方 API 來下載數據：
 
@@ -112,6 +114,7 @@ python src/train.py --model unet --epochs 15 --batch_size 16
 -----
 
 ## 📁 Repository 結構
+```
 SIIM-ACR-Pneumothorax-Segmentation/
 ├── .gitignore               # 忽略 .ckpt, 數據集等
 ├── README.md                # 專案說明 (您正在閱讀)
@@ -131,7 +134,7 @@ SIIM-ACR-Pneumothorax-Segmentation/
     ├── models.py            # U-Net, U-Net++ (PyTorch Lightning Module)
     ├── metrics.py           # Dice / IoU 評估指標
     └── train.py             # K-fold 交叉驗證訓練主腳本
-
+```
 -----
 
 ## 📊 實驗結果
