@@ -12,7 +12,7 @@
 ### 團隊成員
 * B1228005 胡樂麒
 * B1228010 李怡萱
-* B1228011 劉 廷
+* B1228011 劉姮廷
 * B1228021 邱庭俞
 * B1228039 蔡勇濱
 
@@ -24,6 +24,7 @@
 
 ### 1. 環境設置
 
+```bash
 # 1. 複製本專案 (請替換成您自己的 repo 連結)
 git clone [https://github.com/](https://github.com/)[Your-Username]/SIIM-ACR-Pneumothorax-Segmentation.git
 cd SIIM-ACR-Pneumothorax-Segmentation
